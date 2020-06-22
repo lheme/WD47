@@ -1,0 +1,21 @@
+{
+  "name": "Aula",
+  "version": "0.0.1",
+  "description": "Treinamento Caelum",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Node",
+    "Grunt"
+  ],
+  "author": "Luiz Leme",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt-cli": "~0.1.13",
+    "grunt": "~0.4.5",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-clean": "~0.5.0"
+  }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<title>Cadastro de Automóveis</title>
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+	<link rel="stylesheet" href="carros.css">
+	<meta charset="utf-8">
+</head>
+<body ng-controller="carros">
+	<h1>{{loja}} Automóveis - {{2014-1970}} anos de tradição</h1>
+	<form class="pure-form pure-form-aligned">
+		<fieldset>
+			<div class="pure-control-group">
+				<label for="fabricante">Fabricante</label>
+				<input id="fabricante" type="text" placeholder="Fabricante" ng-model="fabricante">
+			</div>
+
+			<div class="pure-control-group">
+				<label for="modelo">Modelo</label>
+				<input id="modelo" type="text" placeholder="Modelo" ng-model="modelo">
+			</div>
+
+			<div class="pure-control-group">
+				<label for="ano">Ano</label>
+				<input id="ano" type="text" placeholder="Ano" ng-model="ano">
+			</div>
+
+			<div class="pure-controls">
+				<button type="submit" class="pure-button pure-button-primary" ng-show="btinserir" ng-click="inserir()">Inserir</button>
+				<button type="submit" class="pure-button pure-button-primary" ng-show="btatualizar" ng-click="atualizar()">Atualizar</button>
+			</div>
+
+		</fieldset>
+	</form>
+	<table class="pure-table">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Fabricante</th>
+				<th>Modelo</th>
+				<th>Ano</th>
+				<th>Ações</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="item in listaCarros">
+				<td>{{$index}}</td>
+				<td>{{item.fabricante}}</td>
+				<td>{{item.modelo}}</td>
+				<td>{{item.ano}}</td>
+				<td>
+					<a href="#" ng-click="editar($index,$event)">Editar</a> | 
+					<a href="#" ng-click="excluir($index,$event)">Excluir</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<script src="angular.min.js"></script>
+	<script src="carrosCtrl.js"></script>
+</body>
+</html>
